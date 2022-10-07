@@ -170,23 +170,23 @@ function Section() {
                 to={`/vehicles/${vehicles.id}`}
                 state={location}
                 key={vehicles.id}
-                className="flex flex-col items-center my-4 p-2 max-w-sm bg-slate-800 shadow-xl hover:bg-white hover:border hover:border-black  dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+                className="flex flex-col items-center my-4 p-2 max-w-sm bg-slate-800 text-white shadow-xl hover:bg-white hover:border hover:text-black hover:border-black  dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
               >
                 <div className="flex flex-col justify-start p-6">
-                  <span className="text-cyan-600 text-sm font-bold uppercase pb-4">
+                  <span className="text-sm font-bold uppercase pb-4">
                     {i + 1}. Brand: {vehicles?.brand}
                   </span>
-                  <span className="text-emerald-500 text-sm font-bold uppercase pb-4">
+                  <span className="text-sm font-bold uppercase pb-4">
                     Model: {vehicles?.model}
                   </span>
-                  <span className="text-fuchsia-700	text-sm font-bold uppercase pb-4">
+                  <span className="text-sm font-bold uppercase pb-4">
                     ModelYear: {vehicles?.modelYear}
                   </span>
-                  <span className="text-blue-700 text-sm font-bold uppercase pb-4">
+                  <span className="text-sm font-bold uppercase pb-4">
                     Plate: {vehicles?.plate}
                   </span>
                   {vehicles.notes && (
-                    <span className="text-red-700 text-sm font-bold uppercase pb-4">
+                    <span className="text-sm font-bold uppercase pb-4">
                       Notes: {vehicles?.notes}
                     </span>
                   )}
