@@ -21,6 +21,26 @@ function Model() {
     navigate("/model/" + firstUpper(brand));
   };
 
+  const content = data?.map((vehicles, i) => {
+    return (
+      <NavLink
+        to={`/model/${vehicles.brand}`}
+        state={location}
+        key={vehicles.id}
+        className="flex flex-col items-center my-4 p-6 max-w-sm bg-slate-800 text-white   hover:bg-white hover:border hover:border-black hover:text-black shadow-xl  dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+      >
+        <div className="flex flex-col justify-start p-6">
+          <span className="text-black-600 text-sm font-bold uppercase pb-4">
+            {i + 1} Brand: {vehicles.brand}
+          </span>
+          <span className="text-black-500 text-sm font-bold uppercase pb-4">
+            Model: {vehicles.model}
+          </span>
+        </div>
+      </NavLink>
+    );
+  });
+
   return (
     <>
       {/*Head title*/}
@@ -87,25 +107,7 @@ function Model() {
         </div>
         {/*Model Data*/}
         <div className="mt-8 overflow-y-auto p-4 pt-3 h-96 grid lg:grid-cols-5 gap-2 sm:grid-cols-3">
-          {data?.map((vehicles, i) => {
-            return (
-              <NavLink
-                to={`/model/${vehicles.brand}`}
-                state={location}
-                key={vehicles.id}
-                className="flex flex-col items-center my-4 p-6 max-w-sm bg-slate-800 text-white   hover:bg-white hover:border hover:border-black hover:text-black shadow-xl  dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-              >
-                <div className="flex flex-col justify-start p-6">
-                  <span className="text-black-600 text-sm font-bold uppercase pb-4">
-                    {i + 1} Brand: {vehicles.brand}
-                  </span>
-                  <span className="text-black-500 text-sm font-bold uppercase pb-4">
-                    Model: {vehicles.model}
-                  </span>
-                </div>
-              </NavLink>
-            );
-          })}
+          {content}
         </div>
       </div>
     </>
