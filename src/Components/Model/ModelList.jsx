@@ -3,8 +3,8 @@ import { Link, NavLink, useLocation, useParams } from "react-router-dom";
 import { useDetailControllersQuery } from "../../app/modelApi";
 
 function ModelDetial() {
-  const { brand } = useParams();
-  const { data } = useDetailControllersQuery(brand);
+  const { id } = useParams();
+  const { data } = useDetailControllersQuery(id);
   const location = useLocation();
 
   const content = data?.map((car, i) => {

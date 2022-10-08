@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "../Components/Header/Header";
-import ModelDetial from "./../Components/Model/ModelDetial";
+import ModelDetail from "../Components/Model/ModelDetail";
 
-function ModelDetails() {
+function ModelDetail() {
   return (
     <>
       <Header />
-      <ModelDetial />
+      <ModelDetail />
     </>
   );
 }
 
-export default ModelDetails;
+export default ModelDetail;
