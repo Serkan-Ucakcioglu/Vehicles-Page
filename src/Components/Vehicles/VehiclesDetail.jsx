@@ -9,6 +9,7 @@ import {
 import edit from "../../svg/Edit.svg";
 import deletes from "../../svg/delete.svg";
 import Delete from "../Popup/Delete";
+import Loader from "../Loader";
 
 function VehiclesDetail() {
   const [show, setShow] = useState(false);
@@ -16,7 +17,7 @@ function VehiclesDetail() {
   const location = useLocation();
 
   const { id } = useParams();
-  const { data: vehicles } = useDetailVehiclesQuery(id);
+  const { data: vehicles, isFetching } = useDetailVehiclesQuery(id);
 
   const [updateVehicles] = useUpdateVehiclesMutation();
   const [deleteVehicles, { isSuccess }] = useDeleteVehiclesMutation();
@@ -32,7 +33,7 @@ function VehiclesDetail() {
   const onSubmit = (data) => {
     const req = {
       plate: data.plate,
-      modelId: data.modelId,
+      modelId: Number(data.modelId),
       modelYear: Number(data.modelYear),
       notes: data.notes,
     };
@@ -52,6 +53,7 @@ function VehiclesDetail() {
       setEditShow(false);
     }
   };
+  if (isFetching) return <Loader />;
 
   return (
     <>

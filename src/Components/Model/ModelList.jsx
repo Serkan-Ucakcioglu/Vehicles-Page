@@ -1,10 +1,11 @@
 import React from "react";
 import { Link, NavLink, useLocation, useParams } from "react-router-dom";
 import { useDetailControllersQuery } from "../../app/modelApi";
+import Loader from "../Loader";
 
 function ModelDetial() {
   const { brand } = useParams();
-  const { data } = useDetailControllersQuery(brand);
+  const { data, isFetching } = useDetailControllersQuery(brand);
   const location = useLocation();
 
   const content = data?.map((car, i) => {
@@ -26,6 +27,7 @@ function ModelDetial() {
       </NavLink>
     );
   });
+  if (isFetching) return <Loader />;
   return (
     <>
       {/*Head Title*/}

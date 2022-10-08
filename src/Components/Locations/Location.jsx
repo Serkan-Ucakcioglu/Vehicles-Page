@@ -1,12 +1,13 @@
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import { useState } from "react";
 import { useGetLocationQuery } from "../../app/modelApi";
+import Loader from "../Loader";
 
 function Location() {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_MY_MAPS_KEY,
   });
-  const { data: locations } = useGetLocationQuery();
+  const { data: locations, isFetching } = useGetLocationQuery();
   const [cent, setCent] = useState({
     latitude: 39.925533,
     longitude: 32.866287,
@@ -14,6 +15,8 @@ function Location() {
   const center = { lat: cent.latitude, lng: cent.longitude };
 
   if (!isLoaded) return <div>loading...</div>;
+  if (isFetching) return <Loader />;
+
   return (
     <>
       <h1 className="text-2xl font-extrabold text-slate-700">Online Cars</h1>

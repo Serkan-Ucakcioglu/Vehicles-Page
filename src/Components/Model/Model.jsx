@@ -1,9 +1,10 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useModelControllersQuery } from "../../app/modelApi";
+import Loader from "../Loader";
 
 function Model() {
-  const { data } = useModelControllersQuery();
+  const { data, isFetching } = useModelControllersQuery();
   const location = useLocation();
   const navigate = useNavigate();
   const {
@@ -40,6 +41,7 @@ function Model() {
       </NavLink>
     );
   });
+  if (isFetching) return <Loader />;
 
   return (
     <>

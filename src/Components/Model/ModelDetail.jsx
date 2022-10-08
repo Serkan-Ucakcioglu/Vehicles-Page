@@ -1,13 +1,15 @@
 import { Link, useLocation, useParams } from "react-router-dom";
 import { useDetailVehiclesQuery } from "../../app/vehiclesApi";
+import Loader from "../Loader";
 
 function VehiclesDetail() {
   const location = useLocation();
 
   const { id } = useParams();
 
-  const { data: vehicles } = useDetailVehiclesQuery(id);
-  console.log(vehicles);
+  const { data: vehicles, isFetching } = useDetailVehiclesQuery(id);
+  if (isFetching) return <Loader />;
+
   return (
     <>
       {/* Vehicles Details - İnfo*/}

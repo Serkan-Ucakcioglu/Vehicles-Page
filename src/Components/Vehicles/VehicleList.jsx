@@ -5,9 +5,10 @@ import {
   useGetVehiclesQuery,
 } from "../../app/vehiclesApi";
 import { useForm } from "react-hook-form";
+import Loader from "../Loader";
 
 function Section() {
-  const { data } = useGetVehiclesQuery();
+  const { data, isFetching } = useGetVehiclesQuery();
   const location = useLocation();
   const [addShow, setAddShow] = useState(false);
   const [addVehicles] = useAddVehiclesMutation();
@@ -62,6 +63,7 @@ function Section() {
     );
   });
 
+  if (isFetching) return <Loader />;
   return (
     <>
       {/*Page Head Title*/}
