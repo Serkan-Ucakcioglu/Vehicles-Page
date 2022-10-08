@@ -3,20 +3,21 @@ import { Link, NavLink, useLocation, useParams } from "react-router-dom";
 import { useDetailControllersQuery } from "../../app/modelApi";
 
 function ModelDetial() {
-  const { id } = useParams();
-  const { data } = useDetailControllersQuery(id);
+  const { brand } = useParams();
+  const { data } = useDetailControllersQuery(brand);
   const location = useLocation();
 
   const content = data?.map((car, i) => {
     return (
       <NavLink
-        to={`/vehicles/${car.id}`}
+        to={`/models/${car.id}`}
+        state={location}
         key={car.id}
         className="flex flex-col items-center my-4 p-6 max-w-sm bg-slate-800 hover:bg-white   hover:border hover:border-black shadow-md  dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
       >
         <div className="flex flex-col justify-start p-6">
           <span className="text-sm font-bold uppercase pb-4 text-cyan-600">
-            {i + 1} Brand: {car.brand}
+            {i + 1} Brand: {car.brand} list
           </span>
           <span className="text-emerald-500	text-sm font-bold uppercase pb-4">
             Model: {car.model}

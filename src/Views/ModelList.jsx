@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../Components/Header/Header";
 import ModelList from "../Components/Model/ModelList";
 
-function ModelDetails() {
+function ModelLists() {
   return (
     <>
       <Header />
@@ -11,4 +11,4 @@ function ModelDetails() {
   );
 }
 
-export default ModelDetails;
+export default ModelLists;
