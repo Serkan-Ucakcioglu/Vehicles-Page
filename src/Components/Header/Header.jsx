@@ -7,9 +7,8 @@ function Header() {
       {/*Head title*/}
       <div className="flex flex-col items-center py-12">
         <span className="font-bold text-white uppercase  text-5xl">
-          Minimal Blog
+          Vehicles Pages
         </span>
-        <p className="text-lg text-white">Lorem Ipsum Dolor Sit Amet</p>
       </div>
       <nav
         className="w-full py-4 border-t border-b bg-slate-800"
