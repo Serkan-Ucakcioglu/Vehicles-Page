@@ -1,4 +1,4 @@
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import { useState } from "react";
 import { useGetLocationQuery } from "../../app/modelApi";
 import Loader from "../Loader";
@@ -14,7 +14,7 @@ function Location() {
   });
   const center = { lat: cent.latitude, lng: cent.longitude };
 
-  if (!isLoaded) return <div>loading...</div>;
+  if (!isLoaded) return <Loader />;
   if (isFetching) return <Loader />;
 
   return (
@@ -52,6 +52,7 @@ function Location() {
             mapContainerClassName="w-96 h-72"
           >
             Harita
+            <Marker position={center} />
           </GoogleMap>
           <span>Harita</span>
         </div>
