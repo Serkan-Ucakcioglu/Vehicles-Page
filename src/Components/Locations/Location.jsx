@@ -46,7 +46,7 @@ function Location() {
           <GoogleMap
             zoom={10}
             center={center}
-            mapContainerClassName="w-72 h-72"
+            mapContainerClassName="w-96 h-72"
           >
             Harita
           </GoogleMap>
