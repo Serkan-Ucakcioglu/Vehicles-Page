@@ -108,7 +108,7 @@ function Model() {
           {errors?.brand?.message}
         </div>
         {/*Model Data*/}
-        <div className="mt-8 overflow-y-auto p-4 pt-3 h-96 grid lg:grid-cols-5 gap-2 sm:grid-cols-3">
+        <div className="mt-8 overflow-y-auto p-4 pt-3 h-[550px] grid lg:grid-cols-5 gap-2 sm:grid-cols-3">
           {content}
         </div>
       </div>
