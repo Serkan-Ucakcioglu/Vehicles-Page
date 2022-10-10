@@ -38,7 +38,7 @@ function Section() {
         to={`/vehicles/${vehicles.id}`}
         state={location}
         key={vehicles.id}
-        className="flex flex-col items-center my-4 p-2 max-w-sm bg-slate-800 text-white shadow-xl hover:bg-white hover:border hover:text-black hover:border-black  dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+        className="flex flex-col items-center  my-4 p-2 max-w-sm bg-slate-800 text-white shadow-xl hover:bg-white hover:border hover:text-black hover:border-black  dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
       >
         <div className="flex flex-col justify-start p-6">
           <span className="text-sm font-bold uppercase pb-4">
