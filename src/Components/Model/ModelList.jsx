@@ -38,7 +38,7 @@ function ModelDetial() {
       {location.state !== null && (
         <Link
           to={location?.state?.pathname}
-          className="mt-4 p-2 text-white rounded bg-black hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium  text-sm   dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+          className="mt-4 p-2 text-white rounded bg-sky-500 hover:bg-sky-700  focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium  text-sm   dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
         >
           Back
         </Link>
