@@ -68,9 +68,11 @@ function VehiclesDetail() {
       <span className="text-sm font-bold uppercase pb-4">
         Plate: {vehicles?.plate}
       </span>
-      <span className="text-sm font-bold uppercase pb-4">
-        Notes: {vehicles?.notes}
-      </span>
+      {vehicles.notes && (
+        <span className="text-sm font-bold uppercase pb-4">
+          Notes: {vehicles?.notes}
+        </span>
+      )}
 
       <span className="flex justify-between items-center">
         <img
