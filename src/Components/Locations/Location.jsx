@@ -14,6 +14,27 @@ function Location() {
   });
   const center = { lat: cent.latitude, lng: cent.longitude };
 
+  const content = locations?.map((vehicles, i) => {
+    return (
+      <div
+        key={vehicles.id}
+        onClick={() =>
+          setCent({
+            latitude: vehicles.latitude,
+            longitude: vehicles.longitude,
+          })
+        }
+        className="flex flex-col items-center cursor-pointer my-4 p-6 max-w-sm bg-slate-800  border hover:bg-gray-100  hover:border hover:border-black text-white hover:text-black shadow-xl  dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+      >
+        <div className="flex flex-col hover:text-black justify-start p-6">
+          <span className="  text-sm font-bold uppercase pb-4">
+            {i + 1} plate: {vehicles.plate}
+          </span>
+        </div>
+      </div>
+    );
+  });
+
   if (!isLoaded) return <Loader />;
   if (isFetching) return <Loader />;
 
@@ -23,26 +44,7 @@ function Location() {
       <div className="container w-full flex flex-col items-center">
         <div className="container overflow-auto p-3 grid grid-rows-2 items-start grid-flow-col gap-2">
           {/*Locations*/}
-          {locations?.map((vehicles, i) => {
-            return (
-              <div
-                key={vehicles.id}
-                onClick={() =>
-                  setCent({
-                    latitude: vehicles.latitude,
-                    longitude: vehicles.longitude,
-                  })
-                }
-                className="flex flex-col items-center cursor-pointer my-4 p-6 max-w-sm bg-slate-800  border hover:bg-gray-100  hover:border hover:border-black text-white hover:text-black shadow-xl  dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-              >
-                <div className="flex flex-col hover:text-black justify-start p-6">
-                  <span className="  text-sm font-bold uppercase pb-4">
-                    {i + 1} plate: {vehicles.plate}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
+          {content}
         </div>
         <div className="mt-8">
           {/*Google  Maps */}
