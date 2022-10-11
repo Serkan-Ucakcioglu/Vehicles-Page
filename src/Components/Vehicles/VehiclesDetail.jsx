@@ -21,7 +21,6 @@ function VehiclesDetail() {
   const { vehicles, isFetching } = useGetVehiclesQuery(undefined, {
     selectFromResult: ({ data }) => ({
       vehicles: data?.find((vehicle) => {
-        console.log(Number(id), vehicle.id);
         return vehicle.id === Number(id);
       }),
     }),
