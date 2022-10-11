@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import {
   useDeleteVehiclesMutation,
-  useDetailVehiclesQuery,
+  useGetVehiclesQuery,
   useUpdateVehiclesMutation,
 } from "../../app/vehiclesApi";
 import edit from "../../svg/Edit.svg";
@@ -17,7 +17,12 @@ function VehiclesDetail() {
   const location = useLocation();
 
   const { id } = useParams();
-  const { data: vehicles, isFetching } = useDetailVehiclesQuery(id);
+
+  const { vehicles, isFetching } = useGetVehiclesQuery(undefined, {
+    selectFromResult: ({ data }) => ({
+      vehicles: data?.find((post) => Number(post.id) == id),
+    }),
+  });
 
   const [updateVehicles] = useUpdateVehiclesMutation();
   const [deleteVehicles, { isSuccess }] = useDeleteVehiclesMutation();

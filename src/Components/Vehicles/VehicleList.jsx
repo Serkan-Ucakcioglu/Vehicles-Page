@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import Loader from "../Loader";
 
 function Section() {
-  const { data, isFetching } = useGetVehiclesQuery();
+  const { data, isFetching } = useGetVehiclesQuery("getVehicles");
   const location = useLocation();
   const [addShow, setAddShow] = useState(false);
   const [addVehicles] = useAddVehiclesMutation();
@@ -84,7 +84,6 @@ function Section() {
           aria-modal="true"
         >
           <div class="fixed inset-0 bg-black bg-opacity-75 transition-opacity"></div>
-
           <div className="fixed inset-0 z-10 overflow-y-auto">
             <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
               <form
