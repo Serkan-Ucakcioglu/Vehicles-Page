@@ -4,15 +4,12 @@ export const vehiclesApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getVehicles: builder.query({
       query: () => "/vehicles",
-      providesTags: (result, error, arg) =>
-        result
-          ? [...result.map(({ id }) => ({ type: "Post", id })), "Post"]
-          : ["Post"],
+      providesTags: ["vehicles"],
     }),
 
     detailVehicles: builder.query({
       query: (id) => `/vehicles/${id}`,
-      providesTags: (result, error, id) => [{ type: "Posts", id }],
+      providesTags: ["vehicles"],
     }),
     addVehicles: builder.mutation({
       query: (data) => ({
@@ -28,7 +25,7 @@ export const vehiclesApi = apiSlice.injectEndpoints({
         method: "PUT",
         body: data.req,
       }),
-      invalidatesTags: (result, error, arg) => [{ type: "Post", id: arg.id }],
+      invalidatesTags: ["vehicles"],
     }),
     deleteVehicles: builder.mutation({
       query: (id) => ({
