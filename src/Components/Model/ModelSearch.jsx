@@ -75,7 +75,7 @@ function ModelSearch() {
             {errors?.brand?.message}
         </div></>
 
-    return { content }
+    return content
 }
 
 export default ModelSearch
