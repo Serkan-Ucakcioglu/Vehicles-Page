@@ -14,9 +14,6 @@ function Section() {
   const [addShow, setAddShow] = useState(false);
   const [addVehicles] = useAddVehiclesMutation();
 
-
-
-
   if (isFetching) return <Loader />;
   return (
     <>
