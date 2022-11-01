@@ -34,9 +34,8 @@ function DetailList({ vehicles, setShow, setEditShow }) {
             />
         </span>
     </div>
-    return (
-        { content }
-    )
+    return content
+
 }
 
 export default DetailList
