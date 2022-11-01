@@ -1,9 +1,9 @@
 import React from "react";
-import VehicleList from "../Components/Vehicles/VehicleList";
+import Vehicle from "../Components/Vehicles/Vehicle";
 function Vehicles() {
   return (
     <>
-      <VehicleList />
+      <Vehicle />
     </>
   );
 }
