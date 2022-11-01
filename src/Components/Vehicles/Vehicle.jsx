@@ -92,7 +92,7 @@ function Section() {
                           placeholder="plate"
                         />
                         <span className="mt-2 text-red-500">
-                          {errors?.modelYear?.message}
+                          {errors?.plate?.message}
                         </span>
                       </div>
 
@@ -125,7 +125,7 @@ function Section() {
                         type="number"
                         id="modelYear"
                         defaultValue=""
-                        {...register("modelYear", { required: "required !" })}
+                        {...register("modelYear", { required: "required !", max: 2022, min: 1930 })}
                         className="bg-gray-50 border mb-2 border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="modelYear"
                       />
