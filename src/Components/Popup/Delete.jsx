@@ -1,6 +1,33 @@
-import React from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
-function Delete({ show, setShow, onSubmit, handleSubmit }) {
+function Delete({ show, setShow, deleteVehicles, id, isSuccess }) {
+  const navigate = useNavigate()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    const req = {
+      plate: data.plate,
+      modelId: Number(data.modelId),
+      modelYear: Number(data.modelYear),
+      notes: data.notes,
+    };
+
+    if (show === true) {
+      deleteVehicles(id);
+      setShow(false);
+      if (!isSuccess) {
+        alert("Silme işlemi başarılı Home Pageye yönlendiriliyorsunuz");
+        navigate("/");
+      } else {
+        alert("silme işlemi başarısız");
+      }
+    }
+  };
   return (
     <>
       {show === true && (
