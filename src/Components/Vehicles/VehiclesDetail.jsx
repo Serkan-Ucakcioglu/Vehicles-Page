@@ -61,7 +61,7 @@ function VehiclesDetail() {
 
       {/* Edit Popup  */}
       {editShow === true && (
-        <Edit updateVehicles={updateVehicles} editShow={show} setEditShow={setShow} id={id} isSuccess={isSuccess} />
+        <Edit updateVehicles={updateVehicles} editShow={show} setEditShow={setEditShow} id={id} isSuccess={isSuccess} />
       )}
     </>
   );
