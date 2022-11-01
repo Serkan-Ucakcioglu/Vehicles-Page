@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useDetailControllersQuery } from "../../app/modelApi";
 import Loader from "../Loader";
 import ModelLists from "./ModelLists";

@@ -4,19 +4,10 @@ import { useNavigate } from "react-router-dom";
 function Delete({ show, setShow, deleteVehicles, id, isSuccess }) {
   const navigate = useNavigate()
   const {
-    register,
     handleSubmit,
-    formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    const req = {
-      plate: data.plate,
-      modelId: Number(data.modelId),
-      modelYear: Number(data.modelYear),
-      notes: data.notes,
-    };
-
     if (show === true) {
       deleteVehicles(id);
       setShow(false);
