@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 
-function Edit({ update, id, editShow, setEditShow }) {
+function Edit({ update, id, editShow, setEditShow, vehicles }) {
 
     const {
         register,
@@ -48,6 +48,7 @@ function Edit({ update, id, editShow, setEditShow }) {
                                         </label>
                                         <input
                                             type="text"
+                                            defaultValue={vehicles?.plate}
                                             id="plate"
                                             {...register("plate", { required: "required !" })}
                                             className="bg-gray-50 border mb-2 border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -65,6 +66,7 @@ function Edit({ update, id, editShow, setEditShow }) {
                                     <input
                                         type="number"
                                         id="modelId"
+                                        defaultValue={vehicles?.modelId}
                                         {...register("modelId", {
                                             required: "required !",
                                             maxLength: { value: 2, message: "Max Length 2" },
@@ -84,6 +86,7 @@ function Edit({ update, id, editShow, setEditShow }) {
                                     <input
                                         type="number"
                                         id="modelYear"
+                                        defaultValue={vehicles?.modelYear}
                                         {...register("modelYear", { required: "required !" })}
                                         className="bg-gray-50 border mb-2 border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="modelYear"
@@ -99,6 +102,7 @@ function Edit({ update, id, editShow, setEditShow }) {
                                     <input
                                         type="text"
                                         id="Notes"
+                                        defaultValue={vehicles?.notes}
                                         {...register("notes", {
                                             required: "required !",
                                             minLength: 5,
