@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 
-function Edit({ update, id, editShow, setEditShow, vehicles }) {
+function Edit({ updateVehicles, id, editShow, setEditShow, vehicles }) {
 
     const {
         register,
@@ -17,7 +17,7 @@ function Edit({ update, id, editShow, setEditShow, vehicles }) {
         };
 
         if (editShow !== true) {
-            update({ id, req });
+            updateVehicles({ id, req });
             alert("başarılı");
             setEditShow(false);
         }
