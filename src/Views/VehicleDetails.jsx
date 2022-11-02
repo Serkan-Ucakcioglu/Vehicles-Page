@@ -1,5 +1,5 @@
 import React from "react";
-import VehiclesDetail from "../Components/Vehicles/VehiclesDetail";
+import VehiclesDetail from "../Components/Vehicles/VehiclesDetail/VehiclesDetail";
 
 function VehicleDetail() {
   return (

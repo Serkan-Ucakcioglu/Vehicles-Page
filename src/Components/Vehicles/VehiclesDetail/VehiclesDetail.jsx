@@ -4,11 +4,11 @@ import {
   useDeleteVehiclesMutation,
   useGetVehiclesQuery,
   useUpdateVehiclesMutation,
-} from "../../app/vehiclesApi";
-import DetailList from "./DetailList";
-import Delete from "../Popup/Delete"
-import Edit from "../Popup/Edit"
-import Loader from "../Loader";
+} from "../../../app/vehiclesApi";
+import VehiclesDetailData from "./VehiclesDetailData";
+import Delete from "../../Popup/Delete"
+import Edit from "../../Popup/Edit"
+import Loader from "../../Loader";
 
 
 function VehiclesDetail() {
@@ -37,7 +37,7 @@ function VehiclesDetail() {
         <h1 className="mt-4 text-black text-2xl text-center mb-3 font-extrabold">
           Vehicles Details
         </h1>
-        <DetailList vehicles={vehicles} setEditShow={setEditShow} setShow={setShow}
+        <VehiclesDetailData vehicles={vehicles} setEditShow={setEditShow} setShow={setShow}
         />
       </div>
 

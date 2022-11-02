@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
-import { useDetailControllersQuery } from "../../app/modelApi";
-import Loader from "../Loader";
-import ModelLists from "./ModelLists";
+import { useDetailControllersQuery } from "../../../app/modelApi";
+import Loader from "../../Loader";
+import ModelListData from "./ModelListData";
 
 function ModelDetial() {
   const { brand } = useParams();
@@ -29,7 +29,7 @@ function ModelDetial() {
       {/* Data */}
       <div className="container flex mt-4 items-center justify-center">
         <section className="w-full md:w-2/3 max-h-full	  grid grid-cols-3 gap-5 place-content-center overflow-auto">
-          <ModelLists data={data} location={location} />
+          <ModelListData data={data} location={location} />
         </section>
       </div>
 

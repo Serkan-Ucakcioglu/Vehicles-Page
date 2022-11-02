@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useModelControllersQuery } from "../../app/modelApi";
 import Loader from "../Loader";
 import HomeModel from "./HomeModel";
-import ModelSearch from "./ModelSearch";
+import ModelSearch from "./ModelSearch/ModelSearch";
 
 function Model() {
   const { data, isFetching } = useModelControllersQuery();
