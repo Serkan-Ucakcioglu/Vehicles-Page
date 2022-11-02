@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 
-function HomeModel({data,location}) {
+function HomeModel({ data, location }) {
   const content = data?.map((vehicles, i) => {
     return (
       <NavLink
