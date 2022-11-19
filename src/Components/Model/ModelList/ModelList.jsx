@@ -29,7 +29,9 @@ function ModelDetial() {
       {/* Data */}
       <div className="container flex mt-4 items-center justify-center">
         <section className="w-full md:w-2/3 max-h-full	  grid grid-cols-3 gap-5 place-content-center overflow-auto">
-          <ModelListData data={data} location={location} />
+          {data?.map((car, i) => (
+            <ModelListData car={car} i={i} location={location} />
+          ))}
         </section>
       </div>
 
