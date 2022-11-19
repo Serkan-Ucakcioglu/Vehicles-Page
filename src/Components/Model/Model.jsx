@@ -22,7 +22,9 @@ function Model() {
 
         {/*Model Data*/}
         <div className="mt-8 overflow-y-auto p-4 pt-3 h-[550px] grid lg:grid-cols-5 gap-2 sm:grid-cols-3">
-          <HomeModel data={data} location={location} />
+          {data?.map((vehicles, i) => (
+            <HomeModel vehicles={vehicles} i={i} location={location} />
+          ))}
         </div>
       </div>
     </>
