@@ -30,14 +30,20 @@ function Section() {
 
       {/*Add Car*/}
       {addShow && (
-        <Add addVehicles={addVehicles} addShow={addShow} setAddShow={setAddShow} />
+        <Add
+          addVehicles={addVehicles}
+          addShow={addShow}
+          setAddShow={setAddShow}
+        />
       )}
 
       {/*Vehicles Data */}
       <div className="container mx-auto flex justify-center flex-wrap py-6">
         <section className="w-full md:w-2/3 grid grid-cols-3 gap-5   place-content-center mt-2 overflow-auto">
           {/*Vehicles List Data*/}
-          <VehicleList data={data} location={location} />
+          {data?.map((vehicles, i) => (
+            <VehicleList vehicles={vehicles} i={i} location={location} />
+          ))}
         </section>
       </div>
     </>
