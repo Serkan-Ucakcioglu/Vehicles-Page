@@ -5,7 +5,6 @@ import LocationLists from "./LocationLists";
 import LocationMap from "./LocationMap";
 
 function Location() {
-
   const { data: locations, isFetching } = useGetLocationQuery();
   const [cent, setCent] = useState({
     latitude: 39.925533,
